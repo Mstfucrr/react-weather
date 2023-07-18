@@ -3,7 +3,8 @@ import React, { useMemo, useState } from 'react'
 import usePlacesAutocomplete, { getLatLng, getGeocode } from 'use-places-autocomplete'
 const banner = require('../assets/images/banner.png')
 
-export default function Places() {
+export default function Places({ setSelected }: any) {
+
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_MAP_API_KEY as string,
     libraries: ["places"],
@@ -11,20 +12,12 @@ export default function Places() {
   if (!isLoaded) return <div>Loading...</div>;
   return (
     <div>
-      <Header />
+      <Header setSelected={setSelected} />
     </div>
   )
 }
 
-
-
-export const Header = () => {
-
-  const center = useMemo(() => ({ lat: 43.45, lng: -80.49 }), []);
-  const [selected, setSelected] = useState(null);
-
-
-  
+export const Header = ({ setSelected }: any) => {
 
   return (
     <div className='object-cover py-[70px] px-0 min-h-[350px] ' style={{
@@ -33,20 +26,21 @@ export const Header = () => {
       <div className="container max-w-[1170px] mx-auto">
         <form className='relative mb-[70px]' onSubmit={(e) => {
           e.preventDefault();
-          console.log(selected);
         }}>
           <PlaceAutoComplete setSelected={setSelected} />
 
           <input type="submit" value="Bul"
             className='absolute top-[5px] right-[5px] bottom-[5px] py-0 px-10
-                          border-none bg-[#009ad8] rounded-[30px] text-white cursor-pointer' />
+                      border-none bg-[#009ad8] rounded-[30px] text-white cursor-pointer
+                      hover:bg-[#0082b0] transition-all duration-300 ease-in-out
+                      hover:scale-x-[1.14] hover:scale-y-[1.22]' />
         </form>
       </div>
     </div>
   )
 }
 
-const PlaceAutoComplete = ({ setSelected }: { setSelected: any; }) => {
+const PlaceAutoComplete = ({ setSelected }: any) => {
   const {
     ready,
     value,
@@ -90,7 +84,13 @@ const PlaceAutoComplete = ({ setSelected }: { setSelected: any; }) => {
 
 
       return (
-        <li key={place_id} onClick={handleSelect(suggestion)}>
+        <li key={place_id} onClick={handleSelect(suggestion)}
+          className='py-[10px] px-[20px] cursor-pointer hover:bg-[#009ad8]
+          transition-all duration-300 ease-in-out
+          hover:text-white hover:font-bold
+          rounded-[30px]
+          '
+        >
           <strong>{main_text}</strong> <small>{secondary_text}</small>
         </li>
       );
