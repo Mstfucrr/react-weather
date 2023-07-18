@@ -4,11 +4,11 @@ const logo = require('../assets/images/logo.png')
 export const Navbar = () => {
   return (
     <div className="py-[50px]">
-      <div className="container mx-auto">
-        <a href="#" className="float-left">
-          <img src={logo} alt="" className="inline-block text-center mr-[10px]" />
-          <div className="inline-block text-center">
-            <h1 className="text-white text-lg mb-1">Hava durumu</h1>
+      <div className="container mx-auto max-w-[1170px] flex justify-between items-center">
+        <a href="#" className='flex'>
+          <img src={logo} alt="" className="mr-[10px] align-middle" />
+          <div className="inline-block">
+            <h1 className="text-white mb-1 font-bold">Hava durumu</h1>
             <small className="block text-sm text-gray-400">
               tagline goes here
             </small>
@@ -16,7 +16,7 @@ export const Navbar = () => {
         </a>
 
         {/* Default snippet for navigation */}
-        <div className="float-right">
+        <div>
           {/* <button type="button" className="menu-toggle my-auto bg-transparent border-solid border-transparent 
                                           text-white p-5 rounded-[40px] transition-all duration-[3s] ease-out
                                           md:hidden inline-block hover:border-cyan-600 active:text-cyan-600
@@ -35,7 +35,7 @@ export const Navbar = () => {
           </ul> {/* .menu */}
         </div> {/* .main-navigation */}
 
-        <div className="mobile-navigation"></div>
+        <div className="mobile-navigation hidden"></div>
       </div>
     </div>
   )
