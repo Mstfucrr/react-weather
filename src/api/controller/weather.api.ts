@@ -1,11 +1,15 @@
-import { weatherService } from '../service/index'
 import { WeatherApiResponse } from '../model/WeatherModel'
+import WeatherService from '../service'
 
-
-export default class WeatherController {
-    public static async getWeatherData(city: string): Promise<WeatherApiResponse> {
-        const weatherData = await weatherService.getWeatherAsync(city);
-        return weatherData;
-    }
+export const getWeatherData = async (
+    lat: number,
+    lon: number
+): Promise<WeatherApiResponse> => {
+    const apiKey = process.env.REACT_APP_WEATHER_API_KEY
+    const service = new WeatherService({
+        apiKey: apiKey,
+    })
+    return await service.getWeatherAsync(lat, lon) as WeatherApiResponse
+    
 }
 
