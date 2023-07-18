@@ -3,13 +3,11 @@ import React, { useMemo, useState } from 'react'
 import usePlacesAutocomplete, { getLatLng, getGeocode } from 'use-places-autocomplete'
 const banner = require('../assets/images/banner.png')
 
-
 export default function Places() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyDhMtuJgfpi9QJIYlFHcUC5Mh7YywWkaco",
+    googleMapsApiKey: process.env.REACT_APP_MAP_API_KEY as string,
     libraries: ["places"],
   });
-
   if (!isLoaded) return <div>Loading...</div>;
   return (
     <div>
