@@ -132,7 +132,10 @@ export interface WeatherApiResponse {
     location: Location;
     current: Current;
     forecast: Forecast;
-    
 }
 
 
+export interface WeatherApiRequestLatLng {
+    lat: number;
+    lng: number;
+}

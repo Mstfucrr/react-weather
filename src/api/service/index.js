@@ -1,12 +1,11 @@
-import { WeatherApiResponse } from "../model/WeatherModel";
 
-class WeatherService {
+export default class WeatherService {
     constructor(options) {
         this.options = options;
     }
 
-    async getWeatherAsync(city) {
-        const url = `http://api.weatherapi.com/v1/forecast.json?key=${this.options.apiKey}&days=10&q=${city}&aqi=no`;
+    async getWeatherAsync(lat, lon) {
+        const url = `http://api.weatherapi.com/v1/forecast.json?key=${this.options.apiKey}&days=10&q=${lat},${lon}&aqi=no&alerts=no`;
 
         try {
             const response = await fetch(
@@ -32,9 +31,4 @@ class WeatherService {
     }
 }
 
-// key = d1398cba8a894feb9f7180821232602
-
-export const weatherService = new WeatherService({
-    apiKey: 'd1398cba8a894feb9f7180821232602',
-});
 
