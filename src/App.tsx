@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Places setSelected={setSelected} />
-      <ForecastTable weatherData={weatherData} />
+      {weatherData && <ForecastTable weatherData={weatherData} />}
     </div>
   );
 }
