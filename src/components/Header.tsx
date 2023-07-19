@@ -29,11 +29,11 @@ export const Header = ({ setSelected }: any) => {
         }}>
           <PlaceAutoComplete setSelected={setSelected} />
 
-          <input type="submit" value="Bul"
+          {/* <input type="submit" value="Bul"
             className='absolute top-[5px] right-[5px] bottom-[5px] py-0 px-10
                       border-none bg-[#009ad8] rounded-[30px] text-white cursor-pointer
                       hover:bg-[#0082b0] transition-all duration-300 ease-in-out
-                      hover:scale-x-[1.14] hover:scale-y-[1.22]' />
+                      hover:scale-x-[1.14] hover:scale-y-[1.22]' /> */}
         </form>
       </div>
     </div>
@@ -110,7 +110,7 @@ const PlaceAutoComplete = ({ setSelected }: any) => {
       {/* We can use the "status" to decide whether we should display the dropdown or not */}
 
       {status === 'OK' && <ul
-        className='absolute top-[45px] left-0 right-0 z-0
+        className='absolute top-[45px] left-0 right-0 z-40
         bg-[#1e202b] text-white
         px-[20px] py-[20px] rounded-[30px] rounded-t-none
 
