@@ -7,7 +7,7 @@ const compass = require('../assets/images/icon-compass.png')
 
 export const ForecastToday = ({ current, location }: { current: Current, location: Location }) => {
     return (
-        <div className='w-[420px] table-cell align-top even:bg-[#262936]'>
+        <div className='w-full md:w-[420px] table-cell align-top even:bg-[#262936]'>
             {/* header */}
             <div className='after:clear-both after:block after:overflow-hidden after:h-0
                         bg-[#0000001a] p-[10px] text-center font-[400] w-full after:content-[" "]'>

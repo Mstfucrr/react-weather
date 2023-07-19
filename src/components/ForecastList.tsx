@@ -8,7 +8,10 @@ export const ForecastList = (
     { weatherData }: { weatherData: WeatherApiResponse | null }
 ) => {
     return (
-        <div className='w-full bg-[#323544] table table-fixed overflow-hidden rounded-t-[15px] mt-[-150px]'>
+        <div className='w-full bg-[#323544] flex overflow-hidden rounded-t-[15px] mt-[-150px] 
+            md:mx-auto md:mt-[-100px] md:table md:table-fixed md:flex-nowrap flex-wrap
+
+        '>
             {weatherData && (
                 weatherData.current && (
                     <ForecastToday current={weatherData.current as Current } location={weatherData.location as Location} />

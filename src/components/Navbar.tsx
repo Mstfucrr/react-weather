@@ -9,9 +9,6 @@ export const Navbar = () => {
           <img src={logo} alt="" className="mr-[10px] align-middle" />
           <div className="inline-block">
             <h1 className="text-white mb-1 font-bold">Hava durumu</h1>
-            <small className="block text-sm text-gray-400">
-              tagline goes here
-            </small>
           </div>
         </a>
 

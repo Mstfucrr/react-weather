@@ -13,7 +13,7 @@ export const DetailForecast = ({ forecastday, localtime }: { forecastday: Foreca
 
 
     return (
-        <div className='container max-w-[1170px] mx-auto w-full h-[452px] bg-[#323544] rounded-b-[15px]'>
+        <div className='container max-w-[1170px] mx-auto w-full h-[550px] md:h-[452px] bg-[#323544] rounded-b-[15px]'>
             <div className="h-[1px]"></div>
             {/* header */}
             <div className="text-center">
@@ -37,8 +37,8 @@ export const DetailForecast = ({ forecastday, localtime }: { forecastday: Foreca
                     </div>
                 </div>
                 {/* detail content */}
-                <div className="row">
-                    <div className="col w-1/2 float-left">
+                <div className="flex h-auto md:flex-row flex-col">
+                    <div className="w-full md:w-1/2">
                         <div className="mt-[25px] flex justify-evenly flex-row">
                             {/* col */}
                             <div className={detailCol}>
@@ -99,8 +99,8 @@ export const DetailForecast = ({ forecastday, localtime }: { forecastday: Foreca
 
                     </div>
                     {/* sun rise and set */}
-                    <div className="col w-1/2 float-left">
-                        <div className="w-full h-[55px] mt-[25px]">
+                    <div className="w-full md:w-1/2">
+                        <div className="w-full h-[55px] mt-[25px] grid justify-center">
                             <SunRiseSet astro={forecastday.astro} localtime={localtime} />
                         </div>
                     </div>

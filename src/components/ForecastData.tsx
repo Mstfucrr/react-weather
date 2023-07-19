@@ -5,7 +5,7 @@ const wind = require('../assets/images/icon-wind.png')
 
 export const ForecastData = ({ forecast }: { forecast: Forecastday }) => {
     return (
-        <div className='table-cell align-top even:bg-[#262936]'>
+        <div className='table-cell align-top even:bg-[#262936] w-full'>
             {/* header */}
             <div className='bg-[#0000001a] p-[10px] text-center font-[400]'>
                 {forecast.date}
