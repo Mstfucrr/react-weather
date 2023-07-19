@@ -1,5 +1,4 @@
 import { useLoadScript } from '@react-google-maps/api';
-import React, { useMemo, useState } from 'react'
 import usePlacesAutocomplete, { getLatLng, getGeocode } from 'use-places-autocomplete'
 const banner = require('../assets/images/banner.png')
 
