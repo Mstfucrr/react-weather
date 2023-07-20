@@ -1,11 +1,18 @@
 import News from '../../api/model/News'
+import { motion } from 'framer-motion'
+import React from 'react'
 type Props = {
     news: News
 }
 
 export const NewsItem = ({ news }: Props) => {
     return (
-        <div className="border border-gray-700 rounded-lg max-w-lg">
+        <motion.div className="border border-gray-700 rounded-lg max-w-lg"
+            initial={{ scale: 0 , translateY : -100 }}
+            animate={{ scale: 1 , translateY : 0 }}
+            transition={{ duration: 0.5 , type : 'spring' , bounce : 0.5 , delay : 1 }}
+            
+        >
             <div className="bg-gray-800 rounded-lg p-4 mb-4">
                 <div className="text-gray-600">{news.Date}</div>
                 <h3 className="text-md font-bold mt-2 mb-4">
@@ -20,7 +27,7 @@ export const NewsItem = ({ news }: Props) => {
                     {news.Detail.length > 300 ? `${news.Detail.slice(0, 300)}...` : news.Detail}
                 </p>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

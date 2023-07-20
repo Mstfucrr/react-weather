@@ -1,5 +1,6 @@
 import React from 'react'
 import { Forecastday } from '../api/model/WeatherModel'
+import { motion } from 'framer-motion'
 const umberella = require('../assets/images/icon-umberella.png')
 const wind = require('../assets/images/icon-wind.png')
 
@@ -14,7 +15,12 @@ export const ForecastData = ({ forecast }: { forecast: Forecastday }) => {
             <div className="text-center p-[20px]">
                 {/* icon */}
                 <div className="h-auto mb-[20px] flex justify-center">
-                    <img src={forecast.day.condition.icon} alt="" className='w-[80px]' />
+                    <motion.img src={forecast.day.condition.icon} alt="" className='w-[80px]'
+                        initial={{ opacity: 0, scale: 0, rotate: -180 }}
+                        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                        exit={{ opacity: 0, scale: 0, rotate: 180 }}
+                        transition={{ duration: 0.4 }}
+                    />
                 </div>
                 {/* degree */}
                 <div className="text-[24px] text-white font-[700]">

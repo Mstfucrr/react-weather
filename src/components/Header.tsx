@@ -1,5 +1,6 @@
 import { useLoadScript } from '@react-google-maps/api';
 import usePlacesAutocomplete, { getLatLng, getGeocode } from 'use-places-autocomplete'
+import { motion } from 'framer-motion'
 const banner = require('../assets/images/banner.png')
 
 export default function Places({ setSelected }: any) {
@@ -97,14 +98,21 @@ const PlaceAutoComplete = ({ setSelected }: any) => {
 
   return (
     <div className='relative'>
-      <input
+      <motion.input
         className='w-full py-[20px] pl-[20px] pb-[25px]
-        bg-[#1e202b] text-white 
-         outline-none border-none rounded-[30px]'
-        value={value}
-        disabled={!ready}
-        onChange={(e) => setValue(e.target.value)}
-        placeholder="Where are you going?"
+      bg-[#1e202b] text-white
+      outline-none border-none rounded-[30px]'
+      value={value}
+      disabled={!ready}
+      onChange={(e) => setValue(e.target.value)}
+      placeholder="Enter your address"
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      onClick={() => {
+        setValue('')
+      }}
+
       />
       {/* We can use the "status" to decide whether we should display the dropdown or not */}
 
