@@ -44,6 +44,14 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      {/* location title */}
+      <div className="text-center text-[#FFFFFF] text-2xl font-bold mt-4">
+        {weatherData && weatherData.location.name}
+      </div>
+      {/* location subtitle */}
+      <div className="text-center text-[#FFFFFF] text-lg font-bold mt-1">
+        {weatherData && weatherData.location.region}, {weatherData && weatherData.location.country}
+      </div>
       <Places setSelected={setSelected} />
       {weatherData && <ForecastTable weatherData={weatherData} />}
       {newsData && <NewsList newsList={newsData} />}
