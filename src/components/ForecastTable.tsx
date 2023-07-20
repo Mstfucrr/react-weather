@@ -1,6 +1,5 @@
 import { WeatherApiResponse, Forecastday } from '../api/model/WeatherModel'
 import { DetailForecast } from './DetailForecast'
-import { ForecastData } from './ForecastData'
 import { ForecastList } from './ForecastList'
 
 export const ForecastTable = (

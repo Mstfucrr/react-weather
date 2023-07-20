@@ -1,7 +1,5 @@
-import React from 'react'
 import { Current, Forecastday, Location, WeatherApiResponse } from '../api/model/WeatherModel'
 import { ForecastData } from './ForecastData'
-import { Forecast } from '../api/model/WeatherModel'
 import { ForecastToday } from './ForecastToday'
 
 export const ForecastList = (

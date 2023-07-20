@@ -1,4 +1,3 @@
-import React from 'react'
 const logo = require('../assets/images/logo.png')
 
 export const Navbar = () => {
