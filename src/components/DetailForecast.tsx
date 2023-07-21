@@ -55,13 +55,10 @@ export const DetailForecast = ({ forecastday, localtime }: { forecastday: Foreca
                             {/* col */}
                             <div className={detailCol}>
                                 <div>
-                                    <b>Yön</b>
+                                    <b>UV</b>
                                 </div>
                                 <div>
-                                    <b>{forecastday.day.avgvis_km} km</b>
-                                </div>
-                                <div>
-                                    <img className='mt-[15px] w-[30px]' alt="" src={compass} />
+                                    <b>{forecastday.day.uv}</b>
                                 </div>
                             </div>
                             {/* col */}
