@@ -1,5 +1,5 @@
 
-async function getNews() {
+export async function getNews() {
   const url = 'https://www.mynet.com/haberler/hava-durumu';
   const response = await fetch(url);
   const html = await response.text();
@@ -29,4 +29,3 @@ async function getNews() {
   return newsList;
 }
 
-module.exports = getNews;

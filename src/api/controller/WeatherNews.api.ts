@@ -1,4 +1,4 @@
-import getNews from '../service/NewsService';
+import { getNews } from '../service/NewsService';
 import News from '../model/News';
 
 

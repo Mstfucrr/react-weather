@@ -1,10 +1,8 @@
-import React from 'react'
 import { Forecastday } from '../api/model/WeatherModel'
 import { HourData } from './HourData'
 import { SunRiseSet } from './sunRiseSet'
 const umberella = require('../assets/images/icon-umberella.png')
 const wind = require('../assets/images/icon-wind.png')
-const compass = require('../assets/images/icon-compass.png')
 
 
 export const DetailForecast = ({ forecastday, localtime }: { forecastday: Forecastday, localtime: string }) => {
