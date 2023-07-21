@@ -4,7 +4,7 @@ export const Navbar = () => {
   return (
     <div className="py-[50px]">
       <div className="container mx-auto max-w-[1170px] flex justify-between items-center">
-        <a href="#" className='flex'>
+        <a href="/" className='flex'>
           <img src={logo} alt="" className="mr-[10px] align-middle" />
           <div className="inline-block">
             <h1 className="text-white mb-1 font-bold">Hava durumu</h1>
@@ -13,12 +13,7 @@ export const Navbar = () => {
 
         {/* Default snippet for navigation */}
         <div>
-          {/* <button type="button" className="menu-toggle my-auto bg-transparent border-solid border-transparent 
-                                          text-white p-5 rounded-[40px] transition-all duration-[3s] ease-out
-                                          md:hidden inline-block hover:border-cyan-600 active:text-cyan-600
-                                          ">
-            <i className="fa fa-bars"></i>
-          </button> */}
+          
           <ul className="menu list-unstyled inline-block 
           after:content-none after:clear-both after:block after:overflow-hidden after:h-0
                
