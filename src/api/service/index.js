@@ -5,7 +5,7 @@ export default class WeatherService {
     }
 
     async getWeatherAsync(lat, lon) {
-        const url = `http://api.weatherapi.com/v1/forecast.json?key=${this.options.apiKey}&days=10&q=${lat},${lon}&aqi=no&alerts=no`;
+        const url = `https://api.weatherapi.com/v1/forecast.json?key=${this.options.apiKey}&days=10&q=${lat},${lon}&aqi=no&alerts=no`;
 
         try {
             const response = await fetch(
