@@ -1,0 +1,17 @@
+{
+    "detail": {
+        "hourly": {
+            "header": "Saatlik Tahmin"
+        },
+        "header": "Detaylar",
+        "wind": "Rüzgar",
+        "uv": "UV İndeksi",
+        "humidity": "Nem",
+        "precipitation": "Yağış",
+        "pressure": "Basınç"
+    },
+    "header": "Hava Durumu",
+    "input": {
+        "placeholder": "Şehir Giriniz..."
+    }
+}

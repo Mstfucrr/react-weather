@@ -1,22 +1,25 @@
 import { Forecastday } from '../api/model/WeatherModel'
 import { HourData } from './HourData'
 import { SunRiseSet } from './sunRiseSet'
+import { useTranslation } from 'react-i18next'
 const umberella = require('../assets/images/icon-umberella.png')
 const wind = require('../assets/images/icon-wind.png')
 
 
 export const DetailForecast = ({ forecastday, localtime }: { forecastday: Forecastday, localtime: string }) => {
-
+    
     const detailCol = "flex flex-col flex-wrap content-stretch justify-start items-center"
+    const [t] = useTranslation('global')
 
 
+    
     return (
         <div className='container max-w-[1170px] mx-auto w-full h-[550px] md:h-[452px] bg-[#323544] rounded-b-[15px]'>
             <div className="h-[1px]"></div>
             {/* header */}
             <div className="text-center">
                 <div className="text-[18px] font-bold mt-[15px] mb-[5px] mx-0">
-                    Saatlik Tahmin
+                    {t("detail.hourly.header")}                    
                 </div>
             </div>
             {/* hourly forecast content */}
@@ -31,7 +34,7 @@ export const DetailForecast = ({ forecastday, localtime }: { forecastday: Foreca
                 {/* detial header */}
                 <div className="text-center">
                     <div className="text-[18px] font-bold mt-[15px] mb-[5px] mx-0">
-                        Detaylar
+                        {t("detail.header")}
                     </div>
                 </div>
                 {/* detail content */}
@@ -41,7 +44,9 @@ export const DetailForecast = ({ forecastday, localtime }: { forecastday: Foreca
                             {/* col */}
                             <div className={detailCol}>
                                 <div>
-                                    <b>Rüzgar</b>
+                                    <b>
+                                        {t("detail.wind")}
+                                    </b>
                                 </div>
                                 <div>
                                     <b>{forecastday.day.maxwind_kph} km/s</b>
@@ -53,7 +58,9 @@ export const DetailForecast = ({ forecastday, localtime }: { forecastday: Foreca
                             {/* col */}
                             <div className={detailCol}>
                                 <div>
-                                    <b>UV</b>
+                                    <b>
+                                        {t("detail.uv")}
+                                    </b>
                                 </div>
                                 <div>
                                     <b>{forecastday.day.uv}</b>
@@ -62,7 +69,9 @@ export const DetailForecast = ({ forecastday, localtime }: { forecastday: Foreca
                             {/* col */}
                             <div className={detailCol}>
                                 <div>
-                                    <b>Nem</b>
+                                    <b>
+                                        {t("detail.humidity")}
+                                    </b>
                                 </div>
                                 <div>
                                     <b>{forecastday.day.avghumidity} %</b>
@@ -71,7 +80,9 @@ export const DetailForecast = ({ forecastday, localtime }: { forecastday: Foreca
                             {/* col */}
                             <div className={detailCol}>
                                 <div>
-                                    <b>Yağış</b>
+                                    <b>
+                                        {t("detail.precipitation")}
+                                    </b>
                                 </div>
                                 <div>
                                     <b>{forecastday.day.totalprecip_mm} mm</b>
@@ -83,7 +94,9 @@ export const DetailForecast = ({ forecastday, localtime }: { forecastday: Foreca
                             {/* col */}
                             <div className={detailCol}>
                                 <div>
-                                    <b>Basınç</b>
+                                    <b>
+                                        {t("detail.pressure")}
+                                    </b>
                                 </div>
                                 <div>
                                     <b>{forecastday.day.avgvis_km} mb</b>

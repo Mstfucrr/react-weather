@@ -1,0 +1,17 @@
+{
+    "detail": {
+        "hourly": {
+            "header": "Hourly Forecast"
+        },
+        "header": "Details",
+        "wind": "Wind",
+        "uv": "UV Index",
+        "humidity": "Humidity",
+        "precipitation": "Precipitation",
+        "pressure": "Pressure"
+    },
+    "header": "Weather Forecast",
+    "input" : {
+        "placeholder": "Enter a city name..."
+    }
+}

@@ -1,6 +1,7 @@
 import { useLoadScript } from '@react-google-maps/api';
 import usePlacesAutocomplete, { getLatLng, getGeocode } from 'use-places-autocomplete'
 import { motion } from 'framer-motion'
+import {useTranslation} from 'react-i18next';
 const banner = require('../assets/images/banner.png')
 
 export default function Places({ setSelected }: any) {
@@ -28,12 +29,6 @@ export const Header = ({ setSelected }: any) => {
           e.preventDefault();
         }}>
           <PlaceAutoComplete setSelected={setSelected} />
-
-          {/* <input type="submit" value="Bul"
-            className='absolute top-[5px] right-[5px] bottom-[5px] py-0 px-10
-                      border-none bg-[#009ad8] rounded-[30px] text-white cursor-pointer
-                      hover:bg-[#0082b0] transition-all duration-300 ease-in-out
-                      hover:scale-x-[1.14] hover:scale-y-[1.22]' /> */}
         </form>
       </div>
     </div>
@@ -96,6 +91,8 @@ const PlaceAutoComplete = ({ setSelected }: any) => {
       );
     });
 
+    const [t, i18n] = useTranslation('global');
+
   return (
     <div className='relative'>
       <motion.input
@@ -105,7 +102,7 @@ const PlaceAutoComplete = ({ setSelected }: any) => {
       value={value}
       disabled={!ready}
       onChange={(e) => setValue(e.target.value)}
-      placeholder="Enter your address"
+      placeholder= {t('input.placeholder')}
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
