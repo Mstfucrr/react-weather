@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getWeatherData } from "./api/controller/weather.api";
-import {getNewsData} from "./api/controller/WeatherNews.api";
+import { getNewsData } from "./api/controller/WeatherNews.api";
 import News from "./api/model/News";
 import { WeatherApiResponse, WeatherApiRequestLatLng } from "./api/model/WeatherModel";
 import { ForecastTable } from "./components/ForecastTable";
@@ -26,7 +26,6 @@ function App() {
       selected.lat, selected.lng
     ).then((res) => {
       setWeatherData(res);
-      console.log(res)
     });
 
   }, [selected]);
@@ -45,11 +44,11 @@ function App() {
     <div className="App">
       <Navbar />
       {/* location title */}
-      <div className="text-center text-[#FFFFFF] text-2xl font-bold mt-4">
+      <div className="text-center text-[#FFFFFF] text-2xl font-bold">
         {weatherData && weatherData.location.name}
       </div>
       {/* location subtitle */}
-      <div className="text-center text-[#FFFFFF] text-lg font-bold mt-1">
+      <div className="text-center text-[#FFFFFF] text-lg font-bold">
         {weatherData && weatherData.location.region}, {weatherData && weatherData.location.country}
       </div>
       <Places setSelected={setSelected} />
